@@ -8,7 +8,7 @@ header {
     @include devices(laptop, minW) {
       align-items: center;
       padding: 0;
-      padding-top: 45px;
+      padding-top: 55px;
     }
 
     > img {
@@ -27,7 +27,7 @@ header {
       @include devices(tablet, minW) {
         display: block;
         > a {
-          font-size: 12px;
+          font-size: 14px;
           font-weight: 500;
           color: $darkBlue;
           transition: opacity 200ms ease-in-out;

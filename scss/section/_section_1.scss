@@ -67,7 +67,7 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin-top: 76px;
+    margin-top: 115px;
 
     @include devices(tablet, maxW) {
       margin-top: 58px;
