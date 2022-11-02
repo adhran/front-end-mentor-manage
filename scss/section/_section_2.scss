@@ -3,7 +3,7 @@
 
   > .sub_section_1 {
     > h1 {
-      @include subHeader($fontSize: 30px, $fontWeight: 800);
+      @include subHeader($fontSize: 30px, $fontWeight: 700);
       margin-bottom: 14px;
       line-height: 43px;
 
@@ -51,7 +51,7 @@
   > .sub_section_2 {
     margin-top: 56px;
     > .card {
-      margin-bottom: 48px;
+      margin-bottom: 32px;
       > .sub_header_container {
         background-color: $veryPaleRed;
         display: flex;
@@ -97,7 +97,7 @@
       > h1 {
         padding: 0;
         font-size: 36px;
-        font-weight: 800;
+        font-weight: 700;
         margin-bottom: 28px;
 
         @include devices(tablet, maxW) {
