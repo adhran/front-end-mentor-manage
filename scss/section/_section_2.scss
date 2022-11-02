@@ -1,0 +1,141 @@
+.section__2 {
+  text-align: center;
+
+  > .sub_section_1 {
+    > h1 {
+      @include subHeader($fontSize: 30px, $fontWeight: 800);
+      margin-bottom: 14px;
+      line-height: 43px;
+
+      > span {
+        display: block;
+      }
+
+      @include devices(sm-mobile, max) {
+        > span {
+          display: inline;
+        }
+      }
+
+      @include devices(tablet-sm, maxWminW) {
+        padding: 0 16px;
+      }
+    }
+    > p {
+      color: $darkGrayisBlue;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 26px;
+      padding: 0 12px;
+
+      > span {
+        display: block;
+      }
+
+      @include devices(sm-mobile, max) {
+        > span {
+          display: inline;
+        }
+      }
+
+      @include devices(tablet-sm, maxWminW) {
+        padding: 0 46px;
+
+        > span {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  > .sub_section_2 {
+    margin-top: 56px;
+    > .card {
+      margin-bottom: 48px;
+      > .sub_header_container {
+        background-color: $veryPaleRed;
+        display: flex;
+        margin-left: 45px;
+        align-items: center;
+        > h1 {
+          @include subHeader($fontSize: 16px);
+          color: $darkBlue;
+          margin-left: 15px;
+        }
+        > button {
+          cursor: default;
+          padding: 10px 26px;
+          font-size: 14px;
+          font-weight: 600;
+          margin-left: -25px;
+          box-shadow: none;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+      p {
+        color: $darkGrayisBlue;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 27px;
+        margin-top: 13px;
+        padding: 0 20px;
+        text-align: left;
+      }
+    }
+  }
+
+  @include devices(laptop, minW) {
+    display: flex;
+    justify-content: space-between;
+    > .sub_section_1 {
+      text-align: left;
+      width: 50%;
+
+      > h1 {
+        padding: 0;
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 28px;
+
+        @include devices(tablet, maxW) {
+          > span {
+            display: inline;
+          }
+        }
+      }
+      > p {
+        font-size: 16px;
+        > span {
+          display: block;
+        }
+
+        @include devices(tablet, maxW) {
+          width: 75%;
+          > span {
+            display: inline;
+          }
+        }
+      }
+    }
+    > .sub_section_2 {
+      margin-top: 0;
+      width: 50%;
+
+      > .card {
+        > .sub_header_container {
+          background-color: transparent;
+        }
+        > p {
+          padding-left: 102px;
+          font-size: 16px;
+          @include devices(tablet, maxW) {
+            padding: 0 20px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@mixin subHeader($color: $darkBlue, $fontWeight: 700, $fontSize: 38px) {
+  color: $color;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  letter-spacing: -1px;
+}
+
+@mixin devices($breakpoint, $maxmin) {
+  //the name of the mixin is devices
+
+  @if $breakpoint == sm-mobile {
+    @media only screen and (max-width: 340px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @if $maxmin == max {
+      @media only screen and (max-width: 495px) {
+        @content;
+      }
+    } @else {
+      @media only screen and (min-width: 766px) {
+        @content;
+      }
+    }
+  }
+
+  @if $breakpoint == laptop {
+    @if $maxmin == minW {
+      @media only screen and (min-width: 767px) {
+        @content;
+      }
+    }
+  }
+  @if $breakpoint == tablet {
+    @if $maxmin == maxW {
+      @media only screen and (max-width: 990px) {
+        @content;
+      }
+    }
+
+    @if $maxmin == minW {
+      @media only screen and (min-width: 990px) {
+        @content;
+      }
+    }
+  }
+
+  @if $breakpoint == tablet-sm {
+    @if $maxmin == maxWminW {
+      @media only screen and (min-width: 425px) and (max-width: 766px) {
+        @content;
+      }
+    }
+  }
+}

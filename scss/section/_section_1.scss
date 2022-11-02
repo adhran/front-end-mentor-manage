@@ -1,0 +1,112 @@
+.section__1 {
+  margin-bottom: 100px;
+
+  > .main-img > img {
+    display: block;
+    width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    @include devices(mobile, max) {
+      width: 92%;
+    }
+  }
+  > .content {
+    text-align: center;
+
+    > h1 {
+      @include subHeader($fontSize: 38px, $fontWeight: 700);
+      line-height: 47px;
+      margin-bottom: 10px;
+
+      > span {
+        display: block;
+      }
+
+      @include devices(tablet-sm, maxWminW) {
+        padding: 0 16px;
+
+        > span {
+          display: inline;
+        }
+      }
+      @include devices(sm-mobile, max) {
+        > span {
+          display: inline;
+        }
+      }
+    }
+    > p {
+      color: $darkGrayisBlue;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 27px;
+      margin-bottom: 28px;
+
+      > span {
+        display: block;
+      }
+
+      @include devices(tablet-sm, maxWminW) {
+        padding: 0 42px;
+        > span {
+          display: inline;
+        }
+      }
+
+      @include devices(sm-mobile, max) {
+        > span {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  @include devices(laptop, minW) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 76px;
+
+    @include devices(tablet, maxW) {
+      margin-top: 58px;
+    }
+
+    > .main-img {
+      width: 50%;
+      > img {
+        width: 100%;
+      }
+    }
+    > .content {
+      text-align: left;
+      margin-top: 50px;
+      width: 50%;
+
+      @include devices(tablet, maxW) {
+        margin-top: 24px;
+      }
+
+      > h1 {
+        font-size: 48px;
+        line-height: 56px;
+        margin-bottom: 22px;
+
+        @include devices(tablet, maxW) {
+          font-size: 40px;
+          line-height: 48px;
+          margin-bottom: 20px;
+        }
+      }
+      > p {
+        padding: 0;
+        margin-bottom: 40px;
+
+        @include devices(tablet, maxW) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}

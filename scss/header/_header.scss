@@ -1,0 +1,137 @@
+header {
+  > nav {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding: 45px 23px;
+
+    @include devices(laptop, minW) {
+      align-items: center;
+      padding: 0;
+      padding-top: 45px;
+    }
+
+    > img {
+      max-height: 20px;
+      max-width: 110px;
+
+      @include devices(tablet, minW) {
+        max-height: 24px;
+        max-width: 146px;
+      }
+    }
+
+    > .header-menu {
+      display: none;
+
+      @include devices(tablet, minW) {
+        display: block;
+        > a {
+          font-size: 12px;
+          font-weight: 500;
+          color: $darkBlue;
+          transition: opacity 200ms ease-in-out;
+
+          &:not(:last-child) {
+            margin-right: 34px;
+          }
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+
+    > button {
+      display: none;
+
+      @include devices(tablet, minW) {
+        display: block;
+        padding: 16px 36px;
+        font-size: 12px;
+      }
+    }
+
+    > .mobile-header {
+      > .burger_menu {
+        cursor: pointer;
+        z-index: 20;
+        > span {
+          display: block;
+          height: 4px;
+          width: 25px;
+          background-color: $darkBlue;
+          transition: all 0.3s ease-in-out;
+
+          &:not(:last-child) {
+            margin-bottom: 0.1875rem;
+          }
+        }
+      }
+      &.open {
+        > .burger_menu {
+          > span:first-child {
+            transform: translateY(190%) rotate(45deg);
+            top: 3rem;
+            left: 57%;
+          }
+          > span:nth-child(2) {
+            opacity: 0;
+          }
+          > span:last-child {
+            transform: translateY(-170%) rotate(-45deg);
+          }
+        }
+        > .overlay {
+          animation: fade-in 300ms ease-in-out forwards;
+        }
+        > .mobile-header-menu {
+          animation: fade-in 300ms ease-in-out forwards;
+        }
+      }
+
+      > .overlay {
+        background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        visibility: hidden;
+        opacity: 0.5;
+      }
+      > .mobile-header-menu {
+        height: 291px;
+        max-width: 325px;
+        position: absolute;
+        top: 108px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+
+        z-index: 100;
+        background-color: white;
+
+        text-align: center;
+        padding-top: 42px;
+        border-radius: 4px;
+        visibility: hidden;
+
+        > a {
+          display: block;
+          font-weight: 700;
+          color: $darkBlue;
+
+          &:not(:last-child) {
+            margin-bottom: 26px;
+          }
+        }
+      }
+      @include devices(tablet, minW) {
+        display: none;
+      }
+    }
+  }
+}
