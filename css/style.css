@@ -126,6 +126,7 @@ button {
   font-size: 12px;
   background-color: hsl(12deg, 89%, 59%);
   color: hsl(8deg, 100%, 97%);
+  color: white;
   border-radius: 50px;
   box-shadow: 0px 8px 15px rgba(243, 95, 57, 0.41);
   transition: all 200ms ease-in-out;
@@ -594,7 +595,7 @@ header > nav > .mobile-header > .mobile-header-menu > a:not(:last-child) {
 }
 
 .section__3 {
-  margin-top: 68px;
+  margin-top: 116px;
 }
 .section__3 > .testimonial_header {
   margin-bottom: 65px;
